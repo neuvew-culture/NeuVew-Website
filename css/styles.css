@@ -56,12 +56,56 @@ body {
   display: inline-block;
 }
 
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .site-nav a {
-  margin-left: 1.5rem;
   color: var(--muted);
   text-decoration: none;
   font-weight: 500;
   font-size: 1.05rem;
+}
+
+.nav-group {
+  position: relative;
+}
+
+.nav-group > a {
+  display: inline-block;
+}
+
+.dropdown {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.1rem);
+  display: none;
+  flex-direction: column;
+  min-width: 13rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  padding: 0.5rem 0;
+  z-index: 20;
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.dropdown a:hover {
+  background: #eff6ff;
+}
+
+.nav-group:hover .dropdown,
+.nav-group:focus-within .dropdown {
+  display: flex;
 }
 
 .hero {
@@ -204,6 +248,40 @@ body {
   object-fit: contain;
 }
 
+/* Page-level image used under titles */
+.page-image {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  margin: 0 0 2rem 0;
+  object-fit: contain;
+}
+
+/* Layout container for book image + metadata: image above metadata */
+.book-hero {
+  display: block;
+  text-align: left;
+  margin-left: 0;
+}
+.book-images {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+.book-images .page-image {
+  width: auto;
+  max-width: 320px;
+}
+.book-meta {
+  margin: 0;
+  max-width: 720px;
+  text-align: left;
+}
+
 .contact-inline {
   display: flex;
   align-items: center;
@@ -249,5 +327,14 @@ body {
     display: inline-block;
     margin-left: 0;
     margin-right: 1rem;
+  }
+
+  .page-image {
+    margin: 1rem auto;
+  }
+  .book-hero {
+    /* keep stacked on mobile and left-aligned */
+    display: block;
+    text-align: left;
   }
 }
