@@ -108,6 +108,13 @@ body {
   display: block;
 }
 
+@media (max-width: 640px) {
+  .nav-group:hover .dropdown,
+  .nav-group:focus-within .dropdown {
+    display: none;
+  }
+}
+
 .hero {
   padding: 2.5rem 0 2rem;
   text-align: center;
@@ -336,6 +343,10 @@ body {
   display: none;
 }
 
+.nav-expand {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .site-header .container {
     flex-direction: row;
@@ -352,6 +363,9 @@ body {
     margin-top: 0;
     display: none; /* hidden by default on small screens; toggled by hamburger */
     width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 
   /* Hamburger button (injected by JS) */
@@ -425,10 +439,61 @@ body {
   }
 
   /* Ensure dropdown links remain stacked on small screens */
+  .nav-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
+  }
+
   .site-nav a {
     display: inline-block;
     margin-left: 0;
     margin-right: 1rem;
+  }
+
+  .nav-group > a {
+    display: block;
+    width: 100%;
+    padding: 0.35rem 0;
+  }
+
+  .nav-group .nav-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-expand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    min-width: 2.4rem;
+    margin-left: 0.25rem;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  .nav-group.open .nav-expand {
+    color: var(--accent);
+  }
+
+  .nav-group.open .nav-expand::before {
+    content: '−';
+  }
+
+  .nav-group:not(.open) .nav-expand::before {
+    content: '+';
   }
 
   .site-nav .dropdown {
@@ -437,6 +502,13 @@ body {
     box-shadow: none;
     padding: 0;
     min-width: auto;
+    display: none;
+    margin-left: 1rem;
+    width: 100%;
+  }
+
+  .site-nav .nav-group.open .dropdown {
+    display: block;
   }
 
   .site-nav .dropdown a {
