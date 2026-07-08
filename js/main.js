@@ -41,6 +41,20 @@ document.addEventListener('DOMContentLoaded', function () {
       row.appendChild(trigger);
       row.appendChild(expandButton);
 
+      trigger.addEventListener('click', function (event) {
+        if (window.innerWidth > 640) {
+          return;
+        }
+
+        var href = trigger.getAttribute('href');
+        if (!href) {
+          event.preventDefault();
+          return;
+        }
+
+        window.location.href = href;
+      });
+
       expandButton.addEventListener('click', function (event) {
         if (window.innerWidth > 640) {
           return;
