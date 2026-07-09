@@ -201,6 +201,13 @@ body {
   font-size: clamp(1.25rem, 2.5vw, 1.6rem);
 }
 
+.book-content h3 {
+  margin: 1.4rem 0 0.5rem;
+  font-family: Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", SimSun, serif;
+  font-size: 1.18rem;
+  font-weight: 700;
+}
+
 .section p {
   max-width: 760px;
   color: var(--muted);
@@ -291,6 +298,10 @@ body {
 .book-images .page-image {
   width: auto;
   max-width: 320px;
+}
+
+.page-scan {
+  border: 1px solid #cbd5e1;
 }
 
 .book-cover {
