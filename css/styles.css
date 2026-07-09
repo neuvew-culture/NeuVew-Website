@@ -292,6 +292,15 @@ body {
   width: auto;
   max-width: 320px;
 }
+
+.book-cover {
+  margin-bottom: 0.25rem;
+}
+
+.book-cover .page-image {
+  margin-bottom: 0.5rem;
+}
+
 .course-images {
   display: grid;
   grid-template-columns: 1fr;
@@ -304,6 +313,11 @@ body {
   max-width: none;
   margin: 0;
 }
+
+.photography-images .page-image {
+  max-width: 680px;
+}
+
 .book-meta {
   margin: 0;
   max-width: 720px;
