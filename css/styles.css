@@ -300,6 +300,33 @@ body {
   max-width: 320px;
 }
 
+.trip-card-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.trip-intro {
+  max-width: 760px;
+  margin-bottom: 2.5rem;
+}
+
+.trip-intro ul {
+  margin-bottom: 0;
+}
+
+.trip-intro strong {
+  color: var(--text);
+}
+
+.trip-card-images img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .page-scan {
   border: 1px solid #cbd5e1;
 }
