@@ -281,6 +281,10 @@ body {
   object-fit: contain;
 }
 
+.theme-poem-image {
+  max-width: 240px;
+}
+
 /* Layout container for book image + metadata: image above metadata */
 .book-hero {
   display: block;
